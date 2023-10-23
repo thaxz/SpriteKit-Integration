@@ -22,6 +22,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 Text("Score: ")
+                    .foregroundColor(.white)
                     .font(.largeTitle)
                     .bold()
                 Spacer()
