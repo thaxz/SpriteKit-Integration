@@ -6,16 +6,27 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct ContentView: View {
+    
+    var gameScene: GameScene {
+        let scene = GameScene()
+        scene.scaleMode = .fill
+        return scene
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            SpriteView(scene: gameScene)
+                .ignoresSafeArea()
+            VStack {
+                Text("Score: ")
+                    .font(.largeTitle)
+                    .bold()
+                Spacer()
+            }
         }
-        .padding()
     }
 }
 

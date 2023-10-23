@@ -11,6 +11,7 @@
 		E93218072AE707BA00FA6FE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93218062AE707BA00FA6FE3 /* ContentView.swift */; };
 		E93218092AE707BC00FA6FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93218082AE707BC00FA6FE3 /* Assets.xcassets */; };
 		E932180C2AE707BC00FA6FE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E932180B2AE707BC00FA6FE3 /* Preview Assets.xcassets */; };
+		E93218132AE7186700FA6FE3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93218122AE7186700FA6FE3 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E93218062AE707BA00FA6FE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E93218082AE707BC00FA6FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E932180B2AE707BC00FA6FE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E93218122AE7186700FA6FE3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E93218042AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift */,
 				E93218062AE707BA00FA6FE3 /* ContentView.swift */,
+				E93218122AE7186700FA6FE3 /* GameScene.swift */,
 				E93218082AE707BC00FA6FE3 /* Assets.xcassets */,
 				E932180A2AE707BC00FA6FE3 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E93218132AE7186700FA6FE3 /* GameScene.swift in Sources */,
 				E93218072AE707BA00FA6FE3 /* ContentView.swift in Sources */,
 				E93218052AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift in Sources */,
 			);
