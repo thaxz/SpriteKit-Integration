@@ -10,6 +10,7 @@ import SpriteKit
 
 struct ContentView: View {
     
+    // Initializing the Game Scene
     var gameScene: GameScene {
         let scene = GameScene()
         scene.scaleMode = .fill
