@@ -8,7 +8,10 @@
 import Foundation
 import SpriteKit
 
-class GameScene: SKScene, SKPhysicsContactDelegate {
+let height = UIScreen.main.bounds.height
+let width = UIScreen.main.bounds.width
+
+class GameScene: SKScene {
     
     // MARK: Components
     var playerNode = SKSpriteNode()
@@ -19,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: View lifecycle
     
     override func didMove(to view: SKView) {
+        physicsWorld.contactDelegate = self
         setUpScene()
     }
     
@@ -32,7 +36,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    // MARK: Scene SetUp
+    
     private func setUpScene(){
+        scene?.size = CGSize(width: width, height: height)
         setUpBackground()
         setUpPlayer()
         setUpNodes()
@@ -46,23 +53,68 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     private func setUpPlayer(){
-        playerNode = SKSpriteNode(color: .systemRed, size: CGSize(width: 0.20, height: 0.1))
-        playerNode.zPosition = 2
+        playerNode = SKSpriteNode(color: .systemRed, size: CGSize(width: 100, height: 100))
         playerNode.position = CGPoint(x: frame.midX, y: frame.midY)
+        playerNode.zPosition = 2
+        playerNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 100, height: 100))
+        playerNode.physicsBody?.affectedByGravity = false
+        playerNode.physicsBody?.isDynamic = true
+        playerNode.physicsBody?.categoryBitMask = CBitmask.player
+        
+        playerNode.physicsBody?.contactTestBitMask = CBitmask.ally | CBitmask.enemy
         addChild(playerNode)
     }
     
     private func setUpNodes(){
-        allyNode = SKSpriteNode(color: .systemRed, size: CGSize(width: 0.10, height: 0.05))
+        allyNode = SKSpriteNode(color: .systemRed, size: CGSize(width: 100, height: 100))
+        allyNode.position = CGPoint(x: frame.midX, y: frame.minY + 50)
         allyNode.zPosition = 2
-        allyNode.position = CGPoint(x: frame.midX, y: frame.minY + 0.1)
+        allyNode.physicsBody = SKPhysicsBody(rectangleOf: allyNode.size)
+        allyNode.physicsBody?.affectedByGravity = false
+        allyNode.physicsBody?.isDynamic = false
+        allyNode.physicsBody?.categoryBitMask = CBitmask.ally
+        allyNode.physicsBody?.contactTestBitMask = CBitmask.player
         addChild(allyNode)
-        enemyNode = SKSpriteNode(color: .systemBlue, size: CGSize(width: 0.10, height: 0.05))
+        enemyNode = SKSpriteNode(color: .systemBlue, size: CGSize(width: 100, height: 100))
         enemyNode.zPosition = 2
-        enemyNode.position = CGPoint(x: frame.minX + 0.1, y: frame.midY)
+        enemyNode.position = CGPoint(x: frame.minX + 50, y: frame.midY)
+        enemyNode.physicsBody = SKPhysicsBody(rectangleOf: enemyNode.size)
+        enemyNode.physicsBody?.affectedByGravity = false
+        enemyNode.physicsBody?.isDynamic = false
+        enemyNode.physicsBody?.categoryBitMask = CBitmask.enemy
+        enemyNode.physicsBody?.contactTestBitMask = CBitmask.player
         addChild(enemyNode)
     }
     
+}
+
+// MARK: Collisions
+
+extension GameScene: SKPhysicsContactDelegate {
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        let contactA: SKPhysicsBody
+        let contactB: SKPhysicsBody
+        
+        // Pro menor sempre ser o contactA
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
+            contactA = contact.bodyA
+            contactB = contact.bodyB
+        } else {
+            contactA = contact.bodyB
+            contactB = contact.bodyA
+        }
+        
+        // Player and ally
+        if contactA.categoryBitMask == CBitmask.player && contactB.categoryBitMask == CBitmask.ally {
+           print("tocou")
+        }
+        // Player and ally
+        if contactA.categoryBitMask == CBitmask.player && contactB.categoryBitMask == CBitmask.enemy {
+           print("tocou no enemy")
+        }
+        
+    }
     
 }
