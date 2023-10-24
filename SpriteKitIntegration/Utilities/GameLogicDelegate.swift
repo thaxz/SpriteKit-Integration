@@ -7,9 +7,13 @@
 
 import Foundation
 
+// Protocol defining the methods and properties required for game logic.
 protocol GameLogicDelegate {
     
+    // Property to get the total score.
     var totalScore: Int { get }
+    // Function to add a point to the score.
     mutating func addPoint() -> Void
+    // Function to remove a point from the score.
     mutating func removePoint() -> Void
 }
