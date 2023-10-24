@@ -10,10 +10,14 @@ import SpriteKit
 
 struct ContentView: View, GameLogicDelegate {
     
-    var totalScore: Int = 0
+    @State var totalScore: Int = 0
     
     mutating func addPoint() {
         totalScore += 1
+    }
+    
+    mutating func removePoint() {
+        totalScore -= 1
     }
     
     // Initializing the Game Scene
@@ -29,7 +33,7 @@ struct ContentView: View, GameLogicDelegate {
             SpriteView(scene: gameScene)
                 .ignoresSafeArea()
             VStack {
-                Text("Score: ")
+                Text("Score: \(totalScore)")
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .bold()

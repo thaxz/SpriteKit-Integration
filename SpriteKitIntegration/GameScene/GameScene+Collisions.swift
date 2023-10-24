@@ -32,7 +32,7 @@ extension GameScene: SKPhysicsContactDelegate {
         }
         // Handle collision between player and enemy
         if contactA.categoryBitMask == CBitmask.player && contactB.categoryBitMask == CBitmask.enemy {
-            print("DECREASING SCORE")
+            removePoint()
         }
     }
 }

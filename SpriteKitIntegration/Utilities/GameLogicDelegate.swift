@@ -11,4 +11,5 @@ protocol GameLogicDelegate {
     
     var totalScore: Int { get }
     mutating func addPoint() -> Void
+    mutating func removePoint() -> Void
 }

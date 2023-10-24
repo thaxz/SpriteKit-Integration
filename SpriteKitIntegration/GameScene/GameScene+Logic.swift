@@ -12,7 +12,7 @@ import SpriteKit
 
 extension GameScene {
     
-    // When the view is presented
+    // Called when the view is presented
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         setUpScene()
@@ -29,10 +29,19 @@ extension GameScene {
         }
     }
     
-    // Delegate function
+    // MARK: Delegate Functions
+    
+    // Delegate function to add a point
     func addPoint() {
         if var gameLogicDelegate = self.gameLogicDelegate {
             gameLogicDelegate.addPoint()
+        }
+    }
+    
+    // Delegate function to remove a point
+    func removePoint(){
+        if var gameLogicDelegate = self.gameLogicDelegate {
+            gameLogicDelegate.removePoint()
         }
     }
     
