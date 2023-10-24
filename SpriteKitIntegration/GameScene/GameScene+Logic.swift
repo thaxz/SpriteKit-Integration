@@ -8,11 +8,11 @@
 import Foundation
 import SpriteKit
 
-//MARK: Interactions
+//MARK: Game Logic
 
 extension GameScene {
     
-    // MARK: View lifecycle
+    // When the view is presented
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         setUpScene()
@@ -26,6 +26,13 @@ extension GameScene {
             // Update the player's position based on the touch location
             playerNode.position.x = location.x
             playerNode.position.y = location.y
+        }
+    }
+    
+    // Delegate function
+    func addPoint() {
+        if var gameLogicDelegate = self.gameLogicDelegate {
+            gameLogicDelegate.addPoint()
         }
     }
     

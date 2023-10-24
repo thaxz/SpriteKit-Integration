@@ -13,6 +13,9 @@ let width = UIScreen.main.bounds.width
 
 class GameScene: SKScene {
     
+    // Delegate
+    var gameLogicDelegate: GameLogicDelegate? = nil
+    
     // MARK: Components
     var playerNode = SKSpriteNode()
     var enemyNode = SKSpriteNode()

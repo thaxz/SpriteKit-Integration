@@ -8,12 +8,19 @@
 import SwiftUI
 import SpriteKit
 
-struct ContentView: View {
+struct ContentView: View, GameLogicDelegate {
+    
+    var totalScore: Int = 0
+    
+    mutating func addPoint() {
+        totalScore += 1
+    }
     
     // Initializing the Game Scene
     var gameScene: GameScene {
         let scene = GameScene()
         scene.scaleMode = .fill
+        scene.gameLogicDelegate = self
         return scene
     }
     

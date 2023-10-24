@@ -13,7 +13,8 @@
 		E932180C2AE707BC00FA6FE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E932180B2AE707BC00FA6FE3 /* Preview Assets.xcassets */; };
 		E93218132AE7186700FA6FE3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93218122AE7186700FA6FE3 /* GameScene.swift */; };
 		E93218152AE71E6000FA6FE3 /* BitMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93218142AE71E6000FA6FE3 /* BitMask.swift */; };
-		E9EDD8552AE822CC00659CA8 /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EDD8542AE822CC00659CA8 /* GameScene+Touches.swift */; };
+		E969D1202AE83692001157B1 /* GameLogicDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E969D11F2AE83692001157B1 /* GameLogicDelegate.swift */; };
+		E9EDD8552AE822CC00659CA8 /* GameScene+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EDD8542AE822CC00659CA8 /* GameScene+Logic.swift */; };
 		E9EDD8572AE8234700659CA8 /* GameScene+Collisions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EDD8562AE8234700659CA8 /* GameScene+Collisions.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +26,8 @@
 		E932180B2AE707BC00FA6FE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E93218122AE7186700FA6FE3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E93218142AE71E6000FA6FE3 /* BitMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMask.swift; sourceTree = "<group>"; };
-		E9EDD8542AE822CC00659CA8 /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
+		E969D11F2AE83692001157B1 /* GameLogicDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicDelegate.swift; sourceTree = "<group>"; };
+		E9EDD8542AE822CC00659CA8 /* GameScene+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Logic.swift"; sourceTree = "<group>"; };
 		E9EDD8562AE8234700659CA8 /* GameScene+Collisions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Collisions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,11 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				E93218042AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift */,
-				E93218062AE707BA00FA6FE3 /* ContentView.swift */,
-				E93218122AE7186700FA6FE3 /* GameScene.swift */,
-				E9EDD8562AE8234700659CA8 /* GameScene+Collisions.swift */,
-				E9EDD8542AE822CC00659CA8 /* GameScene+Touches.swift */,
-				E93218142AE71E6000FA6FE3 /* BitMask.swift */,
+				E969D11E2AE83675001157B1 /* Views */,
+				E969D11C2AE83660001157B1 /* GameScene */,
+				E969D11D2AE8366A001157B1 /* Utilities */,
 				E93218082AE707BC00FA6FE3 /* Assets.xcassets */,
 				E932180A2AE707BC00FA6FE3 /* Preview Content */,
 			);
@@ -77,6 +77,33 @@
 				E932180B2AE707BC00FA6FE3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E969D11C2AE83660001157B1 /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				E93218122AE7186700FA6FE3 /* GameScene.swift */,
+				E9EDD8562AE8234700659CA8 /* GameScene+Collisions.swift */,
+				E9EDD8542AE822CC00659CA8 /* GameScene+Logic.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		E969D11D2AE8366A001157B1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E93218142AE71E6000FA6FE3 /* BitMask.swift */,
+				E969D11F2AE83692001157B1 /* GameLogicDelegate.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E969D11E2AE83675001157B1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E93218062AE707BA00FA6FE3 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,9 +178,10 @@
 			files = (
 				E93218132AE7186700FA6FE3 /* GameScene.swift in Sources */,
 				E93218072AE707BA00FA6FE3 /* ContentView.swift in Sources */,
+				E969D1202AE83692001157B1 /* GameLogicDelegate.swift in Sources */,
 				E93218052AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift in Sources */,
 				E9EDD8572AE8234700659CA8 /* GameScene+Collisions.swift in Sources */,
-				E9EDD8552AE822CC00659CA8 /* GameScene+Touches.swift in Sources */,
+				E9EDD8552AE822CC00659CA8 /* GameScene+Logic.swift in Sources */,
 				E93218152AE71E6000FA6FE3 /* BitMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

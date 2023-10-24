@@ -28,7 +28,7 @@ extension GameScene: SKPhysicsContactDelegate {
         
         // Handle collision between player and ally
         if contactA.categoryBitMask == CBitmask.player && contactB.categoryBitMask == CBitmask.ally {
-            print("INCREASING SCORE")
+            addPoint()
         }
         // Handle collision between player and enemy
         if contactA.categoryBitMask == CBitmask.player && contactB.categoryBitMask == CBitmask.enemy {
