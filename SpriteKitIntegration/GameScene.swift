@@ -21,19 +21,11 @@ class GameScene: SKScene {
     // MARK: Scene SetUp
     
     func setUpScene(){
+        backgroundColor = SKColor(.black)
         scene?.size = CGSize(width: width, height: height)
-        setUpBackground()
         setUpPlayer()
         setUpAlly()
         setUpEnemy()
-    }
-    
-    private func setUpBackground(){
-        // Create and position the background node
-        let background = SKSpriteNode(color: .black, size: self.size)
-        background.position = CGPoint(x: frame.midX, y: frame.midY)
-        background.zPosition = 0
-        addChild(background)
     }
     
     private func setUpPlayer(){
