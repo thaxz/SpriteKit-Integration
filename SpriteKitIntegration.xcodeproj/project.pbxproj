@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AA4770D2AFA549D00B7E11D /* GameScene+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4770C2AFA549D00B7E11D /* GameScene+Constants.swift */; };
+		3AA4770F2AFA583200B7E11D /* ContentView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA4770E2AFA583200B7E11D /* ContentView+Delegate.swift */; };
+		3AA477112AFA585100B7E11D /* ContentView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA477102AFA585100B7E11D /* ContentView+Preview.swift */; };
 		E93218052AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93218042AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift */; };
 		E93218072AE707BA00FA6FE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93218062AE707BA00FA6FE3 /* ContentView.swift */; };
 		E93218092AE707BC00FA6FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E93218082AE707BC00FA6FE3 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3AA4770C2AFA549D00B7E11D /* GameScene+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Constants.swift"; sourceTree = "<group>"; };
+		3AA4770E2AFA583200B7E11D /* ContentView+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Delegate.swift"; sourceTree = "<group>"; };
+		3AA477102AFA585100B7E11D /* ContentView+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Preview.swift"; sourceTree = "<group>"; };
 		E93218012AE707BA00FA6FE3 /* SpriteKitIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E93218042AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitIntegrationApp.swift; sourceTree = "<group>"; };
 		E93218062AE707BA00FA6FE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +91,7 @@
 				E93218122AE7186700FA6FE3 /* GameScene.swift */,
 				E9EDD8562AE8234700659CA8 /* GameScene+Collisions.swift */,
 				E9EDD8542AE822CC00659CA8 /* GameScene+Logic.swift */,
+				3AA4770C2AFA549D00B7E11D /* GameScene+Constants.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -102,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				E93218062AE707BA00FA6FE3 /* ContentView.swift */,
+				3AA4770E2AFA583200B7E11D /* ContentView+Delegate.swift */,
+				3AA477102AFA585100B7E11D /* ContentView+Preview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,7 +143,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					E93218002AE707BA00FA6FE3 = {
 						CreatedOnToolsVersion = 14.3;
@@ -179,8 +188,11 @@
 				E93218132AE7186700FA6FE3 /* GameScene.swift in Sources */,
 				E93218072AE707BA00FA6FE3 /* ContentView.swift in Sources */,
 				E969D1202AE83692001157B1 /* GameLogicDelegate.swift in Sources */,
+				3AA477112AFA585100B7E11D /* ContentView+Preview.swift in Sources */,
 				E93218052AE707BA00FA6FE3 /* SpriteKitIntegrationApp.swift in Sources */,
+				3AA4770D2AFA549D00B7E11D /* GameScene+Constants.swift in Sources */,
 				E9EDD8572AE8234700659CA8 /* GameScene+Collisions.swift in Sources */,
+				3AA4770F2AFA583200B7E11D /* ContentView+Delegate.swift in Sources */,
 				E9EDD8552AE822CC00659CA8 /* GameScene+Logic.swift in Sources */,
 				E93218152AE71E6000FA6FE3 /* BitMask.swift in Sources */,
 			);
@@ -225,6 +237,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -285,6 +298,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
