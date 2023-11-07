@@ -5,10 +5,9 @@
 //  Created by thaxz on 24/10/23.
 //
 
-import Foundation
 import SpriteKit
 
-// MARK: Collisions
+// MARK: - Collisions
 
 extension GameScene: SKPhysicsContactDelegate {
     
@@ -36,4 +35,3 @@ extension GameScene: SKPhysicsContactDelegate {
         }
     }
 }
-

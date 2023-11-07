@@ -5,10 +5,9 @@
 //  Created by thaxz on 24/10/23.
 //
 
-import Foundation
 import SpriteKit
 
-//MARK: Game Logic
+//MARK: - Game Logic
 
 extension GameScene {
     
@@ -29,20 +28,15 @@ extension GameScene {
         }
     }
     
-    // MARK: Delegate Functions
+    // MARK: - Delegate Functions
     
     // Delegate function to add a point
     func addPoint() {
-        if var gameLogicDelegate = self.gameLogicDelegate {
             gameLogicDelegate.addPoint()
-        }
     }
     
     // Delegate function to remove a point
     func removePoint(){
-        if var gameLogicDelegate = self.gameLogicDelegate {
             gameLogicDelegate.removePoint()
-        }
     }
-    
 }

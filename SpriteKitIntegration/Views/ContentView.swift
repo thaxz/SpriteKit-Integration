@@ -5,26 +5,17 @@
 //  Created by thaxz on 23/10/23.
 //
 
-import SwiftUI
 import SpriteKit
+import SwiftUI
 
-struct ContentView: View, GameLogicDelegate {
+struct ContentView: View {
+    //MARK: - View
     
     @State var totalScore: Int = 0
     
-    mutating func addPoint() {
-        totalScore += 1
-    }
-    
-    mutating func removePoint() {
-        totalScore -= 1
-    }
-    
-    // Initializing the Game Scene
+    // Initialize the Game Scene and integrate the delegate with gameScene connecting it by a SwiftUI view
     var gameScene: GameScene {
-        let scene = GameScene()
-        scene.scaleMode = .fill
-        scene.gameLogicDelegate = self
+        let scene = GameScene(gameLogicDelegate: self)
         return scene
     }
     
@@ -40,11 +31,5 @@ struct ContentView: View, GameLogicDelegate {
                 Spacer()
             }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

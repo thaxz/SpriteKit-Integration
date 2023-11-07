@@ -5,27 +5,45 @@
 //  Created by thaxz on 23/10/23.
 //
 
-import Foundation
 import SpriteKit
-
-let height = UIScreen.main.bounds.height
-let width = UIScreen.main.bounds.width
 
 class GameScene: SKScene {
     
-    // Delegate
-    var gameLogicDelegate: GameLogicDelegate? = nil
+    // MARK: - Delegate
+    var gameLogicDelegate: GameLogicDelegate
     
-    // MARK: Components
-    var playerNode = SKSpriteNode()
-    var enemyNode = SKSpriteNode()
-    var allyNode = SKSpriteNode()
+    // MARK: - Components
+    var playerNode: SKSpriteNode
+    var enemyNode: SKSpriteNode
+    var allyNode: SKSpriteNode
     
-    // MARK: Scene SetUp
+    // MARK: - Initializer
+    init(gameLogicDelegate: GameLogicDelegate,
+         playerNode: SKSpriteNode = SKSpriteNode(),
+         enemyNode: SKSpriteNode = SKSpriteNode(),
+         allyNode: SKSpriteNode = SKSpriteNode(),
+         scaleMode: SKSceneScaleMode = .fill,
+         background: SKColor = .black,
+         size: CGSize = CGSize(width: GameScene.width, height: GameScene.height)) {
+        //our properties fisrt
+            self.gameLogicDelegate = gameLogicDelegate
+            self.playerNode = playerNode
+            self.enemyNode = enemyNode
+            self.allyNode = allyNode
+        //super init second
+            super.init(size: size)
+        // gameScene properties third
+            self.scaleMode = scaleMode
+            self.backgroundColor = background
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Ops, bad inicialization :(")
+    }
+    
+    // MARK: - Scene SetUp
     
     func setUpScene(){
-        backgroundColor = SKColor(.black)
-        scene?.size = CGSize(width: width, height: height)
         setUpPlayer()
         setUpAlly()
         setUpEnemy()
