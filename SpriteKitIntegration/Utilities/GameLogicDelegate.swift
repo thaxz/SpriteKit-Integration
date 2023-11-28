@@ -10,8 +10,12 @@ protocol GameLogicDelegate {
     
     // Property to get the total score.
     var totalScore: Int { get }
+    
     // Function to add a point to the score.
-    mutating func addPoint() -> Void
+    // mutating func addPoint() -> Void
+    func addPoint() -> Void 
+    
     // Function to remove a point from the score.
-    mutating func removePoint() -> Void
+    // mutating func removePoint() -> Void
+    func removePoint() -> Void
 }
