@@ -12,6 +12,7 @@ struct ContentView: View {
     //MARK: - View
     
     @State var totalScore: Int = 0
+    //poderia ser somente: @State var totalScore: Int = 0?
     
     // Initialize the Game Scene and integrate the delegate with gameScene connecting it by a SwiftUI view
     var gameScene: GameScene {
@@ -33,3 +34,4 @@ struct ContentView: View {
         }
     }
 }
+
