@@ -7,11 +7,14 @@
 
 extension ContentView: GameLogicDelegate {
     
-    mutating func addPoint() {
+    // mutating func addPoint() { What is the differences?
+    func addPoint() {
+
         totalScore += 1
     }
     
-    mutating func removePoint() {
+   // mutating func removePoint() { What is the differences?
+    func removePoint() {
         totalScore -= 1
     }
 }
